@@ -1,0 +1,29 @@
+<section class="py-2">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h1 class="display-3 mt-3 pt-5">
+                The Market
+            </h1>
+            <p class="lead">Search for a product and buy it, that simple!</p>
+            <form action="/charge" method="POST">
+            <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="{{stripePublishableKey}}"
+                data-amount="2500"
+                data-name="The Market"
+                data-description="a place to browse and purchase products"
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto">
+            </script>
+            <script>
+                // hide default button
+                document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+            </script>
+            <button type="submit" class="btn btn-outline-dark text-white btn-lg">Purchase</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <img src="/img/hero.jpg" alt="product one" class="img-fluid">
+        </div>
+    </div>
+</section>
